@@ -3,49 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Master Project Index</title>
+<title>Project Index — USD.AI</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  @font-face { font-family: 'PP Eiko'; src: url('https://gpuloans-new.vercel.app/fonts/PPEiko-Medium.woff2') format('woff2'); font-weight: 500; }
+  @font-face { font-family: 'PP Eiko'; src: url('https://gpuloans-new.vercel.app/fonts/PPEiko-Light.woff2') format('woff2'); font-weight: 300; }
+  @font-face { font-family: 'PP Eiko'; src: url('https://gpuloans-new.vercel.app/fonts/PPEiko-Regular.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'SwissNow'; src: url('https://gpuloans-new.vercel.app/fonts/SwissNow-Light.woff2') format('woff2'); font-weight: 300; }
+  @font-face { font-family: 'SwissNow'; src: url('https://gpuloans-new.vercel.app/fonts/SwissNow-Regular.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'SwissNow'; src: url('https://gpuloans-new.vercel.app/fonts/SwissNow-Medium.woff2') format('woff2'); font-weight: 500; }
+  @font-face { font-family: 'SwissNow'; src: url('https://gpuloans-new.vercel.app/fonts/SwissNow-Bold.woff2') format('woff2'); font-weight: 700; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 40px 20px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  h1 { font-size: 2rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
-  .subtitle { color: #666; font-size: 0.85rem; margin-bottom: 48px; }
-  .section { margin-bottom: 48px; }
-  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-  .section-header h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
-  .section-header .count { font-size: 0.7rem; background: #1a1a1a; color: #666; padding: 2px 8px; border-radius: 10px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
-  .card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; transition: all 0.2s ease; cursor: default; }
-  .card:hover { border-color: #333; background: #141414; }
+  body { font-family: 'SwissNow', -apple-system, sans-serif; background: #F7F3EE; color: #2F2823; padding: 0; }
+
+  /* Diagonal line bg texture */
+  .bg-texture {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none;
+    background-image: repeating-linear-gradient(
+      -45deg, transparent, transparent 40px, rgba(169,148,130,0.04) 40px, rgba(169,148,130,0.04) 41px
+    );
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 60px 32px 80px; position: relative; z-index: 1; }
+
+  /* Header */
+  .header { display: flex; align-items: center; gap: 20px; margin-bottom: 12px; }
+  .logo-mark { width: 48px; height: 48px; }
+  h1 { font-family: 'PP Eiko', Georgia, serif; font-weight: 300; font-size: 2.4rem; letter-spacing: -0.03em; color: #2F2823; }
+  .subtitle { font-family: 'SwissNow', sans-serif; font-weight: 300; color: #A99482; font-size: 0.85rem; letter-spacing: 0.02em; margin-bottom: 48px; }
+
+  /* Stats */
+  .stats { display: flex; gap: 48px; margin-bottom: 56px; padding: 32px 0; border-top: 1px solid rgba(169,148,130,0.2); border-bottom: 1px solid rgba(169,148,130,0.2); }
+  .stat { text-align: left; }
+  .stat-num { font-family: 'PP Eiko', Georgia, serif; font-size: 2.2rem; font-weight: 300; color: #2F2823; line-height: 1; }
+  .stat-label { font-family: 'SwissNow', sans-serif; font-size: 0.7rem; font-weight: 500; color: #A99482; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; }
+
+  /* Sections */
+  .section { margin-bottom: 56px; }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-header h2 { font-family: 'PP Eiko', Georgia, serif; font-size: 1.1rem; font-weight: 400; color: #655343; }
+  .section-header .count { font-family: 'SwissNow', sans-serif; font-size: 0.65rem; font-weight: 500; background: #DBD0C6; color: #655343; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.05em; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .card {
+    background: #fff; border: 1px solid #DBD0C6; border-radius: 12px; padding: 24px;
+    transition: all 0.2s ease; cursor: default;
+  }
+  .card:hover { border-color: #A99482; box-shadow: 0 4px 20px rgba(47,40,35,0.06); }
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-  .card-name { font-size: 0.95rem; font-weight: 600; color: #fff; }
-  .badge { font-size: 0.65rem; font-weight: 500; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-  .badge-active { background: #0a2a0a; color: #4ade80; border: 1px solid #166534; }
-  .badge-ref { background: #1a1a00; color: #eab308; border: 1px solid #854d0e; }
-  .badge-archived { background: #1a1a1a; color: #666; border: 1px solid #333; }
-  .card-desc { font-size: 0.82rem; color: #888; line-height: 1.5; margin-bottom: 12px; }
+  .card-name { font-family: 'PP Eiko', Georgia, serif; font-size: 1rem; font-weight: 400; color: #2F2823; }
+  .badge { font-family: 'SwissNow', sans-serif; font-size: 0.6rem; font-weight: 500; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+  .badge-active { background: #F7F3EE; color: #655343; border: 1px solid #A99482; }
+  .badge-ref { background: #F7F3EE; color: #A99482; border: 1px solid #DBD0C6; }
+  .badge-archived { background: #F7F3EE; color: #DBD0C6; border: 1px solid #DBD0C6; }
+  .card-desc { font-family: 'SwissNow', sans-serif; font-size: 0.82rem; font-weight: 300; color: #A99482; line-height: 1.6; margin-bottom: 14px; }
   .card-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-  .meta-link { font-size: 0.72rem; color: #555; background: #0a0a0a; padding: 3px 10px; border-radius: 6px; text-decoration: none; border: 1px solid #1a1a1a; transition: all 0.15s; }
-  .meta-link:hover { color: #aaa; border-color: #333; }
-  .superseded { font-size: 0.72rem; color: #555; margin-top: 6px; }
-  .superseded span { color: #777; }
-  .files-section { margin-top: 48px; }
-  .files-section h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 16px; }
-  .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 6px; }
-  .file-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; background: #111; border-radius: 8px; border: 1px solid #1a1a1a; }
-  .file-name { font-size: 0.8rem; font-family: 'SF Mono', 'Fira Code', monospace; color: #aaa; }
-  .file-purpose { font-size: 0.75rem; color: #555; text-align: right; }
-  .stats { display: flex; gap: 32px; margin-bottom: 48px; }
-  .stat { text-align: center; }
-  .stat-num { font-size: 2rem; font-weight: 700; color: #fff; }
-  .stat-label { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+  .meta-link {
+    font-family: 'SwissNow', sans-serif; font-size: 0.7rem; font-weight: 400;
+    color: #655343; background: #F7F3EE; padding: 4px 12px; border-radius: 8px;
+    text-decoration: none; border: 1px solid #DBD0C6; transition: all 0.15s;
+  }
+  .meta-link:hover { color: #2F2823; border-color: #A99482; background: #fff; }
+  .superseded { font-family: 'SwissNow', sans-serif; font-size: 0.7rem; font-weight: 300; color: #A99482; margin-top: 8px; }
+  .superseded span { font-weight: 400; color: #655343; }
+
+  /* Divider line */
+  .divider { height: 1px; background: rgba(169,148,130,0.2); margin: 0 0 56px; }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 16px 48px; }
+    h1 { font-size: 1.8rem; }
+    .stats { gap: 24px; flex-wrap: wrap; }
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
+<div class="bg-texture"></div>
 <div class="container">
-  <h1>Master Project Index</h1>
-  <p class="subtitle">Last updated: March 25, 2026</p>
+
+  <div class="header">
+    <svg class="logo-mark" viewBox="0 0 228 228" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="228" height="228" fill="#DBD0C6"/>
+      <path d="M113.661 48.2271L114.974 49.0035L121.575 52.9176L128.174 56.8307H128.175L134.776 60.7418V60.7408L141.378 64.6549L154.581 72.481L161.18 76.3922L167.781 80.3053L174.384 84.2184L180.985 88.1295L186.663 91.4947L183.313 96.1842L179.34 101.745L171.393 112.871V112.872L167.947 117.697L162.125 114.246L155.523 110.333L148.921 106.421H148.922L142.32 102.508L135.721 98.5953L129.119 94.6842L115.916 86.858L114.165 85.8189L113.662 85.5211L113.159 85.8189L111.408 86.858L98.2051 94.6842L91.6035 98.5953H91.6025L85.0039 102.508L78.4023 106.421L71.8008 110.333L65.1992 114.246L59.376 117.697L55.9316 112.872L55.9307 112.871L47.9834 101.745L44.0098 96.1842L40.6602 91.4947L46.3389 88.1295L52.9404 84.2184L66.1436 76.3922L72.7432 72.481L85.9463 64.6549L92.5469 60.7408L92.5479 60.7418L99.1494 56.8307H99.1504L105.749 52.9176L112.349 49.0035L112.35 49.0045L113.661 48.2271Z" fill="#F7F3EE" stroke="#A99482" stroke-width="1.97"/>
+      <path d="M117.547 98.0183L124.148 101.928L130.75 105.842L137.353 109.756L143.951 113.666L150.553 117.579L157.154 121.493H157.155L162.832 124.855L151.536 140.672L147.564 146.232L144.117 151.058L138.295 147.606H138.294L131.692 143.696L125.091 139.783L118.489 135.869L114.173 133.312L113.671 133.014L113.168 133.312L108.852 135.869L102.25 139.783L95.6484 143.696L89.0469 147.606L83.2236 151.057L79.7764 146.232L75.8057 140.672H75.8047L64.5078 124.856L70.1865 121.493L76.7881 117.579L83.3896 113.666L89.9883 109.756H89.9893L96.5908 105.842L103.192 101.928L109.794 98.0183L113.67 95.7176L117.547 98.0183Z" fill="#F7F3EE" stroke="#A99482" stroke-width="1.97"/>
+      <path d="M120.104 147.043H120.104L126.705 150.953L133.307 154.867L138.984 158.232L135.635 162.922L131.662 168.481V168.482L127.688 174.045L124.243 178.871L118.421 175.42V175.419L114.165 172.898L113.662 172.6L113.16 172.898L108.904 175.419V175.42L103.081 178.871L99.6367 174.045L95.6631 168.482V168.481L91.6895 162.922L88.3398 158.232L94.0186 154.867L100.618 150.953L100.619 150.954L107.221 147.043H107.222L113.662 143.222L120.104 147.043Z" fill="#F7F3EE" stroke="#A99482" stroke-width="1.97"/>
+      <line x1="113.662" y1="47.4185" x2="113.662" y2="86.3844" stroke="#A99482" stroke-width="1.97"/>
+      <line x1="113.662" y1="94.9089" x2="113.662" y2="133.972" stroke="#A99482" stroke-width="1.97"/>
+      <line x1="113.662" y1="142.345" x2="113.662" y2="173.615" stroke="#A99482" stroke-width="1.97"/>
+      <rect x="1" y="1" width="226" height="226" stroke="#A99482" stroke-width="2" fill="none"/>
+    </svg>
+    <h1>Project Index</h1>
+  </div>
+  <p class="subtitle">Last updated March 25, 2026</p>
 
   <div class="stats">
     <div class="stat"><div class="stat-num">10</div><div class="stat-label">Active Projects</div></div>
@@ -98,7 +149,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-name">Sol Practice (Baez)</span><span class="badge badge-active">Active</span></div>
+        <div class="card-top"><span class="card-name">Sol Practice</span><span class="badge badge-active">Active</span></div>
         <div class="card-desc">Therapist site for Jullian Baez LCSW — dark premium, Vite + React</div>
         <div class="card-meta">
           <a href="https://baez-xi.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
@@ -138,6 +189,8 @@
     </div>
   </div>
 
+  <div class="divider"></div>
+
   <!-- REFERENCE -->
   <div class="section">
     <div class="section-header"><h2>Reference &amp; Assets</h2><span class="count">4</span></div>
@@ -145,7 +198,7 @@
       <div class="card">
         <div class="card-top"><span class="card-name">USD.AI Brand Kit</span><span class="badge badge-ref">Reference</span></div>
         <div class="card-desc">Master brand — logos, fonts (PP Eiko, SwissNow), color palettes, illustrations, and canonical one-pager</div>
-        <div class="card-meta"><span class="meta-link">usd-ai-brand/</span><span class="meta-link" style="color:#4ade80;border-color:#166534">6 new SVGs</span></div>
+        <div class="card-meta"><span class="meta-link">usd-ai-brand/</span></div>
       </div>
       <div class="card">
         <div class="card-top"><span class="card-name">Brand Kit PNGs</span><span class="badge badge-ref">Reference</span></div>
@@ -164,6 +217,8 @@
       </div>
     </div>
   </div>
+
+  <div class="divider"></div>
 
   <!-- ARCHIVED -->
   <div class="section">
@@ -209,7 +264,6 @@
         <div class="card-desc">Token timeline visualization + hi-res PNG capture</div>
         <div class="superseded">Replaced by <span>seo-pages</span></div>
       </div>
-<!-- moved to active -->
       <div class="card">
         <div class="card-top"><span class="card-name">Project Directory</span><span class="badge badge-archived">Archived</span></div>
         <div class="card-desc">Earlier project dashboard attempt — Vite + React boilerplate</div>
