@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Project Index</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 40px 20px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 2rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
+  .subtitle { color: #666; font-size: 0.85rem; margin-bottom: 48px; }
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .section-header h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
+  .section-header .count { font-size: 0.7rem; background: #1a1a1a; color: #666; padding: 2px 8px; border-radius: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; transition: all 0.2s ease; cursor: default; }
+  .card:hover { border-color: #333; background: #141414; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .card-name { font-size: 0.95rem; font-weight: 600; color: #fff; }
+  .badge { font-size: 0.65rem; font-weight: 500; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  .badge-active { background: #0a2a0a; color: #4ade80; border: 1px solid #166534; }
+  .badge-ref { background: #1a1a00; color: #eab308; border: 1px solid #854d0e; }
+  .badge-archived { background: #1a1a1a; color: #666; border: 1px solid #333; }
+  .card-desc { font-size: 0.82rem; color: #888; line-height: 1.5; margin-bottom: 12px; }
+  .card-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta-link { font-size: 0.72rem; color: #555; background: #0a0a0a; padding: 3px 10px; border-radius: 6px; text-decoration: none; border: 1px solid #1a1a1a; transition: all 0.15s; }
+  .meta-link:hover { color: #aaa; border-color: #333; }
+  .superseded { font-size: 0.72rem; color: #555; margin-top: 6px; }
+  .superseded span { color: #777; }
+  .files-section { margin-top: 48px; }
+  .files-section h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 16px; }
+  .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 6px; }
+  .file-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; background: #111; border-radius: 8px; border: 1px solid #1a1a1a; }
+  .file-name { font-size: 0.8rem; font-family: 'SF Mono', 'Fira Code', monospace; color: #aaa; }
+  .file-purpose { font-size: 0.75rem; color: #555; text-align: right; }
+  .stats { display: flex; gap: 32px; margin-bottom: 48px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2rem; font-weight: 700; color: #fff; }
+  .stat-label { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Master Project Index</h1>
+  <p class="subtitle">Last updated: March 25, 2026</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Active Projects</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Reference Assets</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">Archived</div></div>
+    <div class="stat"><div class="stat-num">25</div><div class="stat-label">Total</div></div>
+  </div>
+
+  <!-- ACTIVE -->
+  <div class="section">
+    <div class="section-header"><h2>Active Projects</h2><span class="count">9</span></div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top"><span class="card-name">Deal Flow Deck v2</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">USD.AI investor pitch deck — HTML slides + PDF generation</div>
+        <div class="card-meta">
+          <a href="https://deal-flow-deck-v2.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
+          <a href="https://github.com/chubot5000/deal-flow-deck-v2" target="_blank" class="meta-link">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">GPU Loans</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">GPU financing site — Vite + React + Three.js, earth tone design</div>
+        <div class="card-meta">
+          <a href="https://gpuloans-new.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
+          <a href="https://github.com/chubot5000/gpuloans-site" target="_blank" class="meta-link">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">USD.AI Landing</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Main marketing site — Next.js with SEO pages integrated</div>
+        <div class="card-meta"><span class="meta-link">usdai-landing/</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">SEO Pages</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">9 standalone landing pages — USDai, sUSDai, $CHIP, QEV, CALIBER, Primitives</div>
+        <div class="card-meta">
+          <a href="https://usdai-pages.surge.sh" target="_blank" class="meta-link">↗ Surge</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Permian Labs</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Corporate site — dark minimal, Fragment Glare font, globe animation</div>
+        <div class="card-meta"><span class="meta-link">permian-labs/</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Sol Practice (Baez)</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Therapist site for Jullian Baez LCSW — dark premium, Vite + React</div>
+        <div class="card-meta">
+          <a href="https://baez-xi.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
+          <a href="https://github.com/chubot5000/baez" target="_blank" class="meta-link">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Megabrand 9000</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Digital AI agency — kitschy/loud, lime green, 3D mascot</div>
+        <div class="card-meta">
+          <a href="https://mb9k.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
+          <a href="https://github.com/chubot5000/mb9k" target="_blank" class="meta-link">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">The Sleep Nebula — Site</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Podcast website — static HTML, void aesthetic, episode listings</div>
+        <div class="card-meta">
+          <a href="https://wtgs-site.vercel.app" target="_blank" class="meta-link">↗ Vercel</a>
+          <a href="https://github.com/chubot5000/wtgs-site" target="_blank" class="meta-link">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">The Sleep Nebula — Audio</span><span class="badge badge-active">Active</span></div>
+        <div class="card-desc">Podcast production — TTS narration, music beds, 3 episodes mixed</div>
+        <div class="card-meta"><span class="meta-link">sleep-nebula-audio/</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCE -->
+  <div class="section">
+    <div class="section-header"><h2>Reference &amp; Assets</h2><span class="count">4</span></div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top"><span class="card-name">USD.AI Brand Kit</span><span class="badge badge-ref">Reference</span></div>
+        <div class="card-desc">Master brand — logos (SVG), fonts (PP Eiko, SwissNow), earth + cool tone palettes</div>
+        <div class="card-meta"><span class="meta-link">usd-ai-brand/</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Brand Kit PNGs</span><span class="badge badge-ref">Reference</span></div>
+        <div class="card-desc">33-slide brand presentation exported as PNGs — logos, colors, type, sub-brands</div>
+        <div class="card-meta"><span class="meta-link">brand-kit-pngs/</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">MB9K Assets</span><span class="badge badge-ref">Reference</span></div>
+        <div class="card-desc">Source design files — 3D mascot, bubble logo, brand imagery</div>
+        <div class="card-meta"><span class="meta-link">mb9k-assets/</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">2025 Tax Statements</span><span class="badge badge-ref">Reference</span></div>
+        <div class="card-desc">8 accounts, 82 PDFs, 1,788 parsed transactions + reconciliation sheet</div>
+        <div class="card-meta"><span class="meta-link">tax-statements/</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARCHIVED -->
+  <div class="section">
+    <div class="section-header"><h2>Archived Projects</h2><span class="count">12</span></div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-top"><span class="card-name">Deal Flow Deck v1</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Original investor deck — standalone HTML + PDF</div>
+        <div class="superseded">Replaced by <span>deal-flow-deck-v2</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Deal Flow Slides</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">14 SVG slide exports from earlier deck</div>
+        <div class="superseded">Replaced by <span>deal-flow-deck-v2</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">GPU Loans (Old Next.js)</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Original site with Pipedrive integration — Next.js + TS</div>
+        <div class="superseded">Replaced by <span>gpuloans-new</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">GPU Loans (SEO Page)</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Single standalone HTML page</div>
+        <div class="superseded">Merged into <span>seo-pages / gpuloans-new</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">WTGS Landing</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Next.js podcast landing page (old name)</div>
+        <div class="superseded">Replaced by <span>wtgs-site</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">WTGS Website</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Next.js podcast site with CSS modules</div>
+        <div class="superseded">Replaced by <span>wtgs-site</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">USD.AI (Legacy)</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Early standalone HTML page</div>
+        <div class="superseded">Replaced by <span>usdai-landing</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">$CHIP Timeline</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Token timeline visualization + hi-res PNG capture</div>
+        <div class="superseded">Replaced by <span>seo-pages</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Drive Directory</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Vite + React Google Drive browser app</div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Project Directory</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Earlier project dashboard attempt — Vite + React boilerplate</div>
+        <div class="superseded">Replaced by <span>INDEX.md</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">MRP Redesign</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Monkey King Productions site redesign — single HTML</div>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="card-name">Scrabble</span><span class="badge badge-archived">Archived</span></div>
+        <div class="card-desc">Scrabble game/tool — standalone HTML</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
